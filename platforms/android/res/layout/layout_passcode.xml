@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:orientation="vertical" >
+
+    <EditText
+        android:id="@+id/id_edittext_focus"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:cursorVisible="false"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:imeOptions="flagNoExtractUi"
+        android:inputType="number"
+        android:maxLength="4"
+        android:textColor="@android:color/transparent" >
+
+        <requestFocus />
+    </EditText>
+
+    <LinearLayout
+        android:id="@+id/id_sub_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/id_imageview_logo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/cisco_logo_white" />
+
+        <TextView
+            android:id="@+id/id_textview_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/basic_padding"
+            android:gravity="center"
+            android:textColor="@android:color/white"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/id_linear_layout_passcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/basic_padding"
+            android:gravity="center" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/id_imageview_one"
+                    android:layout_width="@dimen/pin_block_height"
+                    android:layout_height="@dimen/pin_block_height"
+                    android:background="@drawable/edittext_round_white"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded"
+                android:gravity="center" >
+
+                <ImageView
+                    android:id="@+id/id_imageview_two"
+                    android:layout_width="@dimen/pin_block_height"
+                    android:layout_height="@dimen/pin_block_height"
+                    android:background="@drawable/edittext_round_white"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded" >
+
+                <ImageView
+                    android:id="@+id/id_imageview_three"
+                    android:layout_width="@dimen/pin_block_height"
+                    android:layout_height="@dimen/pin_block_height"
+                    android:background="@drawable/edittext_round_white"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/rounded" >
+
+                <ImageView
+                    android:id="@+id/id_imageview_four"
+                    android:layout_width="@dimen/pin_block_height"
+                    android:layout_height="@dimen/pin_block_height"
+                    android:background="@drawable/edittext_round_white"
+                    android:contentDescription="@string/app_name" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/id_textview_forgot_passcode"
+        style="@style/linkTextAppearance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_sub_layout"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:padding="5dp"
+        android:text="@string/msg_forget_passcode" />
+
+    <RelativeLayout
+        android:id="@+id/id_relative_layout_cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/holoblue"
+        android:visibility="gone" >
+
+        <Button
+            android:id="@+id/id_button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/transparent"
+            android:padding="15dp"
+            android:text="@string/msg_cancel"
+            android:textColor="@color/white" />
+    </RelativeLayout>
+
+</RelativeLayout>

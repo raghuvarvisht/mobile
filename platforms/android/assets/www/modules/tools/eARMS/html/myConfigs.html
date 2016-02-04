@@ -1,0 +1,21 @@
+<ion-view title="{{toolItem.tool_name}} - My Configs">
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
+        <ion-list>						
+            <div class="item item-icon-right" ng-repeat="toolItem in toolConfigs">
+                <ion-item>
+                    <!--<img>-->
+                    <h2>{{$index}} {{toolItem.tool_name}} - Custom Config</h2>
+                    <p>{{toolItem.config}}</p>
+                    <div class="buttons">
+                        <button class="button button-energized" ng-click="handleEdit(toolItem.config, toolItem.row_id)">
+                            <i class="icon ion-edit"></i>	
+                        </button>
+                        <button class="button button-dark" ng-click="handleDelete(toolItem.config, toolItem.row_id)" confirm="Are you sure, you want to delete?">
+                            <i class="icon ion-trash-b"></i>
+                        </button>	
+                    </div>							
+                 </ion-item>
+            </div>							
+        </ion-list>
+    </ion-content>
+</ion-view>

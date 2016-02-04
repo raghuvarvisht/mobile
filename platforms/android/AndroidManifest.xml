@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<manifest android:hardwareAccelerated="true" android:versionCode="1" android:versionName="0.0.1" package="com.ionicframework.csgtools667618" xmlns:android="http://schemas.android.com/apk/res/android">
+    <supports-screens android:anyDensity="true" android:largeScreens="true" android:normalScreens="true" android:resizeable="true" android:smallScreens="true" android:xlargeScreens="true" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="com.ionicframework.csgtools667618.permission.C2D_MESSAGE" />
+    <permission android:name="com.ionicframework.csgtools667618.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="22" />
+    <application android:allowBackup="true" android:icon="@drawable/csg_thumb" android:label="@string/app_name" android:theme="@style/AppTheme2">
+        <activity android:label="@string/app_name" android:launchMode="singleTop" android:name="com.cisco.dft.seed.SplashScreen" android:theme="@style/AppTheme2">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:configChanges="orientation|keyboardHidden|keyboard|screenSize|locale" android:label="@string/activity_name" android:launchMode="singleTop" android:name="MainActivity" android:theme="@android:style/Theme.Black.NoTitleBar" android:windowSoftInputMode="adjustResize">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize|orientation" android:label="@string/app_name" android:name="com.cisco.dft.seed.MainActivity" android:theme="@style/CustomActionBarTheme">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.seed.HomeScreen" android:theme="@style/CustomActionBarTheme">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.seed.SecurityCode" android:theme="@style/AppTheme">
+        </activity>
+        <activity android:label="@string/app_name" android:name="com.cisco.dft.seed.ErrorActivity" android:theme="@style/AppTheme">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|navigation" android:label="@string/app_name" android:name="com.cisco.dft.seed.SettingsActivity" android:theme="@style/AppTheme">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.seed.ProductWebView" android:theme="@style/AppTheme">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.seed.SampleWebView" android:theme="@style/AppTheme">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.seed.PrivacyContent" android:theme="@style/AppTheme">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.seed.UsageTerms" android:theme="@style/AppTheme">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.seed.AboutActivity" android:theme="@style/AppTheme">
+        </activity>
+        <activity android:configChanges="orientation|keyboard|keyboardHidden|screenLayout|screenSize|navigation" android:label="@string/app_name" android:name="com.cisco.dft.seed.UserDataActivity" android:theme="@style/AppThemeWhite">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.seed.TeamListActivity" android:theme="@style/CustomActionBarTheme">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.seed.MemberDetails" android:theme="@style/CustomActionBarTheme">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.seed.Logout" android:theme="@style/CustomActionBarTheme">
+        </activity>
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.oauth.activities.LogoutActivity" android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.oauth.activities.LoginActivity" android:theme="@style/AppThemeWhite" />
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.oauth.passcode.ChangePasscode" android:theme="@android:style/Theme.Black.NoTitleBar" />
+        <activity android:configChanges="keyboard|keyboardHidden|screenLayout|uiMode|screenSize|smallestScreenSize" android:label="@string/app_name" android:name="com.cisco.dft.oauth.passcode.Passcode" android:theme="@style/AppTheme" />
+        <activity android:exported="true" android:name="com.plugin.gcm.PushHandlerActivity" />
+        <receiver android:name="com.plugin.gcm.GcmBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.ionicframework.csgtools667618" />
+            </intent-filter>
+        </receiver>
+        <service android:exported="false" android:name="com.plugin.gcm.MyGcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+            </intent-filter>
+        </service>
+        <receiver android:name="com.plugin.gcm.CordovaGCMBroadcastReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="com.ionicframework.csgtools667618" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.plugin.gcm.GCMIntentService" />
+    </application>
+</manifest>

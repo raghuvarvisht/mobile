@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="holoblue">#008bcd</color>
+    <color name="lightblue">#E3EAF4</color>
+    <color name="blue_border">#066</color>
+    <color name="header_color">#D9EEF3</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray57">#919191</color>
+    <color name="app_bg">#E9E9E9</color>
+    <color name="grey">#e5e5e5</color>
+    <color name="transparent_blue">#6699FF</color>
+    <color name="cyan">#00FFFF</color>
+
+</resources>

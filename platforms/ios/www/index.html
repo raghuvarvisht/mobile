@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <style>
+      .angular-google-map-container {
+          width: 100%;
+          height: 504px;
+      }
+    </style>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <link href="lib/ionicons-2.0.1/css/ionicons.min.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+	 <script src="lib/ng-cordova/dist/ng-cordova.min.js"></script>
+	  <!--<script src="js/ng-cordova.min.js"></script>-->
+    <script src="cordova.js"></script>
+	
+    <script src="modules/tools/eARMS/js/app.js"></script>
+    <script src="modules/tools/eARMS/js/controllers.js"></script>
+    <script src="modules/tools/eARMS/js/routes.js"></script>
+    <script src="modules/tools/eARMS/js/services.js"></script>
+    <script src="modules/tools/eARMS/js/directives.js"></script>
+
+  </head>
+  <body ng-app="app" animation="slide-left-right-ios7">
+  <div>
+    <div>		
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button class="button-icon icon ion-ios-arrow-back">Back</ion-nav-back-button>
+        </ion-nav-bar>
+		<!-- ui-view -->
+        <ion-nav-view></ion-nav-view>
+    </div>
+</div>
+  </body>
+</html>

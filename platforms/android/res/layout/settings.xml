@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="35dp"
+        android:background="#e5e5e5" />
+
+    <RelativeLayout
+        android:id="@+id/container"
+        android:layout_width="fill_parent"
+        android:layout_height="43dp"
+        android:background="@android:color/white"
+        android:clickable="true" >
+
+        <TextView
+            android:id="@+id/about"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="12dp"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:text="About"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/ivarrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/right" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray"
+         />
+
+    <RelativeLayout
+        android:id="@+id/pwd"
+        android:layout_width="fill_parent"
+        android:layout_height="43dp"
+        android:background="@android:color/white"
+        android:clickable="true">
+
+        <TextView
+            android:id="@+id/tvpwd"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="12dp"
+            android:clickable="false"
+            android:gravity="center_vertical"
+            android:text="@string/change_passcode"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/ivtvarrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp"
+            android:clickable="false"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/right" />
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/ivline"
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <RelativeLayout
+        android:id="@+id/rlsignout"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="12dp"
+            android:gravity="center_vertical"
+            android:text="Logout"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <Switch
+            android:id="@+id/logoutbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textView1"
+            android:layout_alignBottom="@+id/textView1"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:switchTextAppearance="@style/SwitchTextAppearance"
+            android:textSize="15sp"
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_bg" />
+    </RelativeLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <RelativeLayout
+        android:id="@+id/userdatacontainer"
+        android:layout_width="fill_parent"
+        android:layout_height="43dp"
+        android:background="@android:color/white"
+        android:clickable="true" >
+
+        <TextView
+            android:id="@+id/userdata"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="12dp"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:text="ProfileData"
+            android:textColor="@android:color/black"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/arrow"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:layout_marginRight="10dp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/right" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pcontainer"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:background="@android:color/white" >
+
+        <Switch
+            android:id="@+id/passcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:paddingLeft="10dp"
+            android:switchTextAppearance="@style/SwitchTextAppearance"
+            android:textSize="15sp"
+            android:thumb="@drawable/switch_thumb"
+            android:track="@drawable/switch_bg"
+            android:visibility="invisible" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/refreshcookie"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:text="RefreshCookie"
+        android:textColor="@android:color/black"
+        android:textSize="12sp"
+        android:visibility="gone" />
+
+</LinearLayout>

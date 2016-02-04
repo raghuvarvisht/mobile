@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/menulayout"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="#008bcd"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Profile Data"
+            android:textColor="@android:color/white"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="none" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="35dp"
+                android:background="#e5e5e5" />
+
+            <RelativeLayout
+                android:id="@+id/firstnamecontainer"
+                android:layout_width="fill_parent"
+                android:layout_height="43dp"
+                android:background="@android:color/white" >
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="12dp"
+                    android:gravity="center_vertical"
+                    android:text="FirstName :"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/userlastname"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/userdatacontainer"
+                android:layout_width="fill_parent"
+                android:layout_height="43dp"
+                android:background="@android:color/white"
+                android:clickable="true" >
+
+                <TextView
+                    android:id="@+id/userdata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="12dp"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="LastName :"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/useridview"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/userid"
+                android:layout_width="fill_parent"
+                android:layout_height="43dp"
+                android:background="@android:color/white"
+                android:clickable="true" >
+
+                <TextView
+                    android:id="@+id/userdataid"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="12dp"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="Uid :"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/usermailview"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/usermailid"
+                android:layout_width="fill_parent"
+                android:layout_height="43dp"
+                android:background="@android:color/white"
+                android:clickable="true" >
+
+                <TextView
+                    android:id="@+id/usermailidtextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="12dp"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="mail :"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/useraccesslevelview"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/useraccesslevel"
+                android:layout_width="fill_parent"
+                android:layout_height="43dp"
+                android:background="@android:color/white"
+                android:clickable="true" >
+
+                <TextView
+                    android:id="@+id/useraccessleveltextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="12dp"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="AccessLevel :"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/seperatorview"
+                android:layout_width="fill_parent"
+                android:layout_height="35dp"
+                android:background="#e5e5e5" />
+
+            <RelativeLayout
+                android:id="@+id/accesstoken"
+                android:layout_width="fill_parent"
+                android:layout_height="43dp"
+                android:background="@android:color/white"
+                android:clickable="true" >
+
+                <TextView
+                    android:id="@+id/accesstokentextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="12dp"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="AccessToken :"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/refreshtokenview"
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/refreshtoken"
+                android:layout_width="fill_parent"
+                android:layout_height="43dp"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/refreshtokentextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="12dp"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="RefreshToken :"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <RelativeLayout
+                android:id="@+id/cookie"
+                android:layout_width="fill_parent"
+                android:layout_height="43dp"
+                android:background="@android:color/white"
+                android:clickable="true"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/cookietextview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="fill_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="12dp"
+                    android:clickable="true"
+                    android:gravity="center_vertical"
+                    android:text="ObSSOCookie :"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+    </LinearLayout>

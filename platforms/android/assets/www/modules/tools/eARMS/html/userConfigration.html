@@ -1,0 +1,25 @@
+<ion-view title= "{{toolName}} Configration">
+    <ion-content overflow-scroll="true" padding="'true'" class="has-header">
+        <form class="list">
+            <ion-list>               
+                <label class="item item-input item-select item-stable" name="SelServer">
+                    <span class="input-label">Select Server</span>                   
+					<select ng-model="serverName" ng-options="value for (key, value) in serverList"></select>
+                </label>
+                <label class="item item-input" name="txtGroup">
+                    <span class="input-label">Group</span>
+                    <input type="text" placeholder="Group" ng-model="groupname" >
+                </label>
+                <label class="item item-input" name="txtRequestId">
+                    <span class="input-label">Request Id</span>
+                    <input type="number" placeholder="Request Id" ng-model="reqid" >
+                </label>
+            </ion-list>
+            <div class="spacer" style="height: 40px;"></div>
+            <div class="button-bar">
+                <button class="button button-dark button-block" ng-click="handleReset()">Cancel</button>              
+                <button class="button button-positive button-block" ng-click="configSubmit(serverName, groupname, reqid, rowId)">Submit</button>
+            </div>
+        </form>
+    </ion-content>
+</ion-view>

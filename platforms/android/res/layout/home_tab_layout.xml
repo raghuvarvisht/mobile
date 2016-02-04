@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="280dp"
+        android:layout_height="288dp"
+        android:layout_centerInParent="true"
+        android:background="@color/grey" >
+        
+         <TextView
+        android:id="@+id/textviewhead"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/msg_welcome"
+        android:textSize="17sp" />
+    </RelativeLayout>
+</RelativeLayout>
