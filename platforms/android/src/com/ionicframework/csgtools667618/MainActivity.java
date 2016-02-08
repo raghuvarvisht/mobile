@@ -30,13 +30,19 @@ public class MainActivity extends CordovaActivity
     {
         super.onCreate(savedInstanceState);
         // Set by <content src="index.html" /> in config.xml
-        SharedPreferences preferences=getSharedPreferences("SharedParams", getApplicationContext().MODE_PRIVATE);
-        String keyDataURL=preferences.getString("isPageUrl", null);
-        String  keyData=preferences.getString("keyDataURL", null);
-        String  notificationMsg = "Service registered message earms"; //preferences.getString("notificationMessage", null);
-        if(keyDataURL != "" && keyDataURL != null)
+        SharedPreferences preferences=getSharedPreferences("ServerParams", getApplicationContext().MODE_PRIVATE);
+        String toolId = preferences.getString("toolId", null);
+
+        if(toolId != "" && toolId != null)
         {
-            launchUrl = launchUrl + "#/" + keyDataURL + "?toolId=" + keyData + "&msg=" + notificationMsg + "&action=Call GTRC";
+            String info = preferences.getString("info", null);
+            String action = preferences.getString("action", null);
+            String topic = preferences.getString("topic", null);
+            String redirectServerURL = preferences.getString("redirectServerURL", null);
+            String redirectClientScreenURL = preferences.getString("redirectClientScreenURL", null);
+            String notificationMsg = preferences.getString("notificationMessage", null);
+
+            launchUrl = launchUrl + "#/" + redirectClientScreenURL + "?toolId=" + toolId + "&info=" + info + "&action=" + action + "&topic=" + topic + "&redirectServerURL=" + redirectServerURL + "&notificationMsg=" + notificationMsg;
             System.out.print("url coming ==" + launchUrl);
             preferences.edit().clear().commit();
         }

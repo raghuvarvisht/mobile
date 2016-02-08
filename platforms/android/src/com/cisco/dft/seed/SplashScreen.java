@@ -102,21 +102,22 @@ public class SplashScreen extends Activity
     {
 		Intent intent = new Intent(SplashScreen.this, MainActivity.class);
 
-		Intent iin= getIntent();
-		Bundle b = iin.getExtras();
+		/*Intent intn= getIntent();
+		Bundle b = intn.getExtras();
 
-		if(b != null) {
-            String keyData = b.getString("isNotificationRedirect");
+		if(b != null)
+		{
+            String toolId = b.getString("toolId");
+            String info = b.getString("info");
+            String action = b.getString("action");
+            String topic = b.getString("topic");
+            String webpage = b.getString("webpage");
+            String redirectClientScreenURL = "toolInfo";
             String notificationMsg = b.getString("notificationMessage");
-            String keyURL = "toolInfo";
-            SharedPreferences.Editor editor = getSharedPreferences("SharedParams", MODE_PRIVATE).edit();
-            editor.putString("keyDataURL", keyData);
-            editor.putString("isPageUrl", keyURL);
-            editor.putString("notificationMessage", notificationMsg);
-            editor.commit();
-        }
-            startActivity(intent);
-            finish();
+        }*/
+
+        startActivity(intent);
+        finish();
 	}
 
 	/**

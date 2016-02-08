@@ -289,7 +289,7 @@ angular.module('app.controllers', [])
 		userConfig["group"] = groupname;
 		userConfig["reqid"] = parseInt(reqid);
         userConfig["toolid"] = specified_tool;
-        userConfig["topic"] = "/topics/" +specified_tool.toLowerCase()+ "/" +groupname +"/" +reqid;
+        userConfig["topic"] = "/topics/" +specified_tool.toLowerCase()+ "-" +groupname +"-" +reqid;
         userConfigJson = userConfig;
         console.log("userConfigJson value " + JSON.stringify(userConfigJson));
         console.log("RowId value " + rowId);
@@ -328,12 +328,17 @@ angular.module('app.controllers', [])
 	 } 
 })
 
-.controller('toolInformationCtrl', function($scope, $stateParams) 
+.controller('toolInformationCtrl', function($scope, $stateParams, $window) 
 {
-	console.log("stateparams =="+$stateParams.toolId+"=="+$stateParams.msg+"=="+$stateParams.action);
+	console.log("stateparams =="+$stateParams.toolId+"=="+$stateParams.info+"=="+$stateParams.action+"=="+$stateParams.topic+"=="+$stateParams.redirectServerURL+"=="+$stateParams.notificationMsg);
     $scope.toolName = $stateParams.toolId;
-    $scope.serverMessage = $stateParams.msg;
+    $scope.serverMessage = $stateParams.notificationMsg;
     $scope.buttonInfo = $stateParams.action;
+    
+    $scope.handleServerAction  = function () 
+	{
+		$window.open($stateParams.redirectServerURL);
+	};
     $scope.callGTRC  = function () 
 	{
 		alert("GTRC");

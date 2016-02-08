@@ -65,7 +65,7 @@ angular.module('app.routes', [])
                       
     .state('toolInformation', 
 	{
-      url: '/toolInfo?toolId&msg&action',
+      url: '/toolInfo?toolId&info&action&topic&redirectServerURL&notificationMsg',
       templateUrl: 'modules/tools/eARMS/html/toolInformation.html',
       controller: 'toolInformationCtrl'
     })
