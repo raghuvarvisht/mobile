@@ -1,9 +1,8 @@
 <ion-view title="User Tools">
-    <ion-content overflow-scroll="true" padding="'true'" class="has-header">
-        <ion-list></ion-list>
+    <ion-content overflow-scroll="true" padding="true" class="has-header">
         <ion-list>
-			<ion-item class="item-thumbnail-left" href="#/side-menu21/user_config" ng-repeat="listItem in listItems track by $index">
-				<img>
+			<ion-item class="item-thumbnail-left" href="#/side-menu21/user_config?tooldata={{listItem}}" ng-repeat="listItem in listItems track by $index">
+				<img ng-src="img/{{listItem.tool_name | lowercase}}.png" >
 				<h2>{{listItem.tool_name}}</h2>
 				<p>Item</p>
 			</ion-item>

@@ -23,6 +23,8 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
+import java.net.URLEncoder;
+
 public class MainActivity extends CordovaActivity
 {
     @Override
@@ -41,8 +43,18 @@ public class MainActivity extends CordovaActivity
             String redirectServerURL = preferences.getString("redirectServerURL", null);
             String redirectClientScreenURL = preferences.getString("redirectClientScreenURL", null);
             String notificationMsg = preferences.getString("notificationMessage", null);
+            System.out.println("Value of redirectServerURL " + redirectServerURL);
+            String redirectURL = null;
+            try
+            {
+                redirectURL = URLEncoder.encode(redirectServerURL, "UTF-8");
+            }
+            catch(Exception e)
+            {
+                e.printStackTrace();
+            }
 
-            launchUrl = launchUrl + "#/" + redirectClientScreenURL + "?toolId=" + toolId + "&info=" + info + "&action=" + action + "&topic=" + topic + "&redirectServerURL=" + redirectServerURL + "&notificationMsg=" + notificationMsg;
+            launchUrl = launchUrl + "#/" + redirectClientScreenURL + "?toolId=" + toolId + "&info=" + info + "&action=" + action + "&topic=" + topic + "&redirectServerURL=" + redirectURL + "&notificationMsg=" + notificationMsg;
             System.out.print("url coming ==" + launchUrl);
             preferences.edit().clear().commit();
         }

@@ -4,7 +4,7 @@
             <ion-list>
                 <label class="item item-select" name="SelServer">
                     <span class="input-label">Select Server</span>                   
-					<select ng-model="selectedItem" ng-options="item.server for item in items"></select>
+					<select ng-model="server" ng-options="item.server for item in items"></select>
                 </label>
                 <label class="item item-input" name="txtGroup">
                     <span class="input-label">Group</span>
@@ -17,8 +17,8 @@
             </ion-list>
             <div class="spacer" style="height: 40px;"></div>
             <div class="button-bar">
-                <button class="button button-assertive button-block" ng-click="handleReset(groupname)">Cancel</button>
-                <button class="button button-positive button-block" ng-click="redirect(groupname, reqId)">Submit</button>
+                <button class="button button-assertive button-block" ng-click="handleReset()">Cancel</button>
+                <button class="button button-positive button-block" ng-click="redirect(server, groupname, reqId)">Submit</button>
             </div>
         </form>
     </ion-content>

@@ -67,6 +67,10 @@
                         {
                             "xml": "<feature name=\"Toast\"><param name=\"ios-package\" value=\"Toast\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"CallNumber\"><param name=\"ios-package\" value=\"CFCallNumber\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -111,6 +115,9 @@
             "PACKAGE_NAME": "com.ionicframework.csgtools667618"
         },
         "cordova-plugin-x-toast": {
+            "PACKAGE_NAME": "com.ionicframework.csgtools667618"
+        },
+        "mx.ferreyra.callnumber": {
             "PACKAGE_NAME": "com.ionicframework.csgtools667618"
         }
     },
@@ -393,6 +400,14 @@
             "file": "plugins/cordova-plugin-x-toast/test/tests.js",
             "id": "cordova-plugin-x-toast.tests",
             "pluginId": "cordova-plugin-x-toast"
+        },
+        {
+            "file": "plugins/mx.ferreyra.callnumber/www/CallNumber.js",
+            "id": "mx.ferreyra.callnumber.CallNumber",
+            "pluginId": "mx.ferreyra.callnumber",
+            "clobbers": [
+                "call"
+            ]
         }
     ],
     "plugin_metadata": {
@@ -408,6 +423,7 @@
         "cordova-plugin-file": "3.0.0",
         "cordova-plugin-media": "1.0.1",
         "com.phonegap.plugins.PushPlugin": "2.5.0",
-        "cordova-plugin-x-toast": "2.3.1"
+        "cordova-plugin-x-toast": "2.3.1",
+        "mx.ferreyra.callnumber": "0.0.2"
     }
 }

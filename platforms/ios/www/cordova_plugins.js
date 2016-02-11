@@ -277,6 +277,14 @@ module.exports = [
         "file": "plugins/cordova-plugin-x-toast/test/tests.js",
         "id": "cordova-plugin-x-toast.tests",
         "pluginId": "cordova-plugin-x-toast"
+    },
+    {
+        "file": "plugins/mx.ferreyra.callnumber/www/CallNumber.js",
+        "id": "mx.ferreyra.callnumber.CallNumber",
+        "pluginId": "mx.ferreyra.callnumber",
+        "clobbers": [
+            "call"
+        ]
     }
 ];
 module.exports.metadata = 
@@ -294,7 +302,8 @@ module.exports.metadata =
     "cordova-plugin-file": "3.0.0",
     "cordova-plugin-media": "1.0.1",
     "com.phonegap.plugins.PushPlugin": "2.5.0",
-    "cordova-plugin-x-toast": "2.3.1"
+    "cordova-plugin-x-toast": "2.3.1",
+    "mx.ferreyra.callnumber": "0.0.2"
 }
 // BOTTOM OF METADATA
 });

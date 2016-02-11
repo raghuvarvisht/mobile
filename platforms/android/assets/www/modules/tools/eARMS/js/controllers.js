@@ -14,6 +14,13 @@ var action = "insert";
 var userId;
 
 angular.module('app.controllers', [])    
+.run(function($ionicPlatform, $cordovaSQLite, $cordovaPush, $q, $http, $cordovaOauth, $rootScope) 
+{
+    $rootScope.createTopic = function createTopic(arguments)
+    {
+       return arguments.join('%%');     
+    }
+})
 .controller('toolListCtrl', function($scope, $cordovaSQLite, $location, $ionicPlatform, DBFactory, $cordovaOauth) 
 {   
     $ionicPlatform.ready(function() 
@@ -71,7 +78,7 @@ angular.module('app.controllers', [])
 	};
 })
 
-.controller('earmsConfigrationCtrl', function($scope, $cordovaSQLite, $location, $ionicPlatform, DBFactory, $stateParams) 
+.controller('earmsConfigrationCtrl', function($scope, $cordovaSQLite, $location, $ionicPlatform, DBFactory, $stateParams, $rootScope) 
 {  		
     $ionicPlatform.ready(function() 
 	{
@@ -212,7 +219,8 @@ angular.module('app.controllers', [])
             console.log("you are not using from mobile, so db plugin in not available");
             return;
         }
-        topicSubscribe.initialize();        
+        topicSubscribe.initialize();  
+              
         var query ="";
         console.log("Action called " + action);
         if(action == "edit") 
@@ -289,7 +297,9 @@ angular.module('app.controllers', [])
 		userConfig["group"] = groupname;
 		userConfig["reqid"] = parseInt(reqid);
         userConfig["toolid"] = specified_tool;
-        userConfig["topic"] = "/topics/" +specified_tool.toLowerCase()+ "-" +groupname +"-" +reqid;
+        //userConfig["topic"] = "/topics/" +specified_tool.toLowerCase()+ "-" +groupname +"-" +reqid;
+        console.log("Topic value " + $rootScope.createTopic(["/topics/", specified_tool.toLowerCase(), groupname, reqid]));
+        userConfig["topic"] = $rootScope.createTopic(["/topics/", specified_tool.toLowerCase(), groupname, reqid]);
         userConfigJson = userConfig;
         console.log("userConfigJson value " + JSON.stringify(userConfigJson));
         console.log("RowId value " + rowId);
@@ -299,6 +309,10 @@ angular.module('app.controllers', [])
        
 	$scope.configSubmit  = function (serverName, groupname, reqid, rowId) 
 	{  
+         $rootScope.selctdServer = serverName;
+         $rootScope.selctdGrp = groupname;
+         $rootScope.selctdReqid = reqid;
+         $rootScope.selectdRowid = rowId;
          getUserInfo(serverName, groupname, reqid, rowId);                          
 	};     
 })
@@ -328,7 +342,7 @@ angular.module('app.controllers', [])
 	 } 
 })
 
-.controller('toolInformationCtrl', function($scope, $stateParams, $window) 
+.controller('toolInformationCtrl', function($scope, $stateParams, $window, DBFactory, $rootScope) 
 {
 	console.log("stateparams =="+$stateParams.toolId+"=="+$stateParams.info+"=="+$stateParams.action+"=="+$stateParams.topic+"=="+$stateParams.redirectServerURL+"=="+$stateParams.notificationMsg);
     $scope.toolName = $stateParams.toolId;
@@ -341,7 +355,15 @@ angular.module('app.controllers', [])
 	};
     $scope.callGTRC  = function () 
 	{
-		alert("GTRC");
+		var number = '18002005555' ; 
+        window.plugins.CallNumber.callNumber(function()
+        {
+            //success event
+        }, 
+        function()
+        {
+            //error event
+        }, number) 
 	};
 	$scope.handleSRM  = function () 
 	{
@@ -353,8 +375,48 @@ angular.module('app.controllers', [])
 	};
 	$scope.refresh  = function () 
 	{
-		alert("Refresh");
-	};		 
+		alert("Hello " + $rootScope.selctdServer + "=" + $rootScope.selctdGrp + "=" + $rootScope.selctdReqid + "=" + $rootScope.selectdRowid);
+        getUserInfo($rootScope.selctdServer, $rootScope.selctdGrp, $rootScope.selctdReqid, $rootScope.selectdRowid);
+	};
+    
+    function getUserInfo(serverName, groupname, reqid, rowId)
+    {
+        DBFactory.getUserInfo(serverName, groupname, reqid, rowId, call_back_user_info)
+    }
+    
+    function call_back_user_info(serverName, groupname, reqid, rowId, userid)
+    {
+        userConfig = {};
+        userConfig["ecb"] = "topicSubscribe.onSubscribeNotificationGCM";
+        console.log("servername = "+JSON.stringify(serverName) + userid);
+        userConfig["userid"] = userid;
+        userConfig["server"] = serverName;
+		userConfig["group"] = groupname;
+		userConfig["reqid"] = parseInt(reqid);
+        userConfig["toolid"] = specified_tool;
+        userConfig["topic"] = "/topics/" +specified_tool.toLowerCase()+ "-" +groupname +"-" +reqid;
+        userConfigJson = userConfig;
+        console.log("userConfigJson value " + JSON.stringify(userConfigJson));
+        console.log("RowId value " + rowId);
+        
+        getToolConfigInfo(rowId, JSON.stringify(userConfigJson));        
+    }	
+    
+    function getToolConfigInfo(id, screenData) 
+    {
+         DBFactory.getToolConfigInfo(id, specified_tool.toLowerCase(), screenData, call_back_data)
+    }	 
+    
+    function call_back_data(screenData, data)
+    {
+        if(typeof window.sqlitePlugin == "undefined") 
+        {
+            alert("db plugin is not available when you use ionic serve, so use mobile to use this functionality");
+            console.log("you are not using from mobile, so db plugin in not available");
+            return;
+        }
+        topicSubscribe.initialize();  
+    }
 })
 
 .controller('NavBarCtrl', function($scope, $location) 

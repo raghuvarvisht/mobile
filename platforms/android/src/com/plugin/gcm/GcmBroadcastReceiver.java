@@ -90,6 +90,7 @@ public class GcmBroadcastReceiver extends WakefulBroadcastReceiver
                 serverIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);*/
 
                 SharedPreferences.Editor editor = context.getSharedPreferences("ServerParams", context.MODE_PRIVATE).edit();
+                System.out.println("Value of redirect server url " + serverObj.getString("webpage"));
                 editor.putString("toolId", serverObj.getString("id"));
                 editor.putString("info", serverObj.getString("info"));
                 editor.putString("action", serverObj.getString("action"));

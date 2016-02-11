@@ -8,55 +8,67 @@ angular.module('app.routes', [])
   // Each state's controller can be found in controllers.js
   $stateProvider
         
+    .state('indexmenu', 
+	{
+      url: '/side-menu20',
+      abstract:true,
+      templateUrl: 'modules/tools/eARMS/html/indexMenu.html'
+    })
+    
+    .state('indexmenu.toolList', 
+	{
+      cache: false,
+      url: '/toolList',
+      views: 
+	  {
+        'side-menu20': 
+		{
+          templateUrl: 'modules/tools/eARMS/html/toolList.html',
+          controller: 'toolListCtrl'
+        }
+      }
+    })
+    
     .state('menu', 
 	{
       url: '/side-menu21',
       abstract:true,
       templateUrl: 'modules/tools/eARMS/html/menu.html'
     })
+    
+    .state('menu.myConfigs', 
+	{
+      cache: false,
+      url: '/myConfigs',
+      views: 
+	  {
+        'side-menu21': 
+		{
+          templateUrl: 'modules/tools/eARMS/html/myConfigs.html',
+          controller: 'earmsMyConfigsCtrl'
+        }
+      }
+    })  
       
-	  
     .state('menu.userConfigration', 
 	{
-      url: '/user_config',
+      url: '/user_config?:tooldata',
       views: 
 	  {
         'side-menu21': 
 		{
           templateUrl: 'modules/tools/eARMS/html/userConfigration.html',
-          controller: 'userConfigrationCtrl'
+          controller: 'earmsConfigrationCtrl'
         }
       }
     })
-        
-       
-            
+                      
     .state('toolInformation', 
 	{
-      url: '/page2',
+      url: '/toolInfo?toolId&info&action&topic&redirectServerURL&notificationMsg',
       templateUrl: 'modules/tools/eARMS/html/toolInformation.html',
       controller: 'toolInformationCtrl'
     })
-        
-      
-              
-    .state('devXTools',
-	{
-      url: '/page3',
-      templateUrl: 'modules/tools/eARMS/html/devXTools.html',
-      controller: 'devXToolsCtrl'
-    })
-	
-	
-	
-	.state('toolList',
-	{
-      url: '/toolList',
-      templateUrl: 'modules/tools/eARMS/html/toolList.html',
-      controller: 'toolListCtrl'
-    });
-
-  //if none of the above states are matched, use this as the fallback
-  //$urlRouterProvider.otherwise('/side-menu21/user_config');
-  $urlRouterProvider.otherwise('/toolList');
+                          		
+    $urlRouterProvider.otherwise('/side-menu20/toolList');
 });

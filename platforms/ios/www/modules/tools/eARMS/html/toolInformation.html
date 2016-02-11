@@ -1,14 +1,18 @@
-<ion-view title="Tool Information">
+<ion-view title= "{{toolName}} - Response">
     <ion-content overflow-scroll="true" padding="'false'" scroll="false" class="has-header">
         <form class="list">
+            <label class="item item-input" name="txtCurrentMsg">
+                <span class="input-label">Tool id : {{toolName}}</span>
+            </label>
             <ion-list></ion-list>
             <label class="item item-input" name="txtCurrentMsg">
-                <span class="input-label">Current Message</span><textarea placeholder="Current Message"> </textarea>
+                <span class="input-label">{{serverMessage}}</span><textarea placeholder="Current Message"> </textarea>
             </label>
         </form>
-        <button class="button button-positive button-block ">Next Step</button>
+        <button class="button button-positive button-block" ng-click="handleServerAction()">{{buttonInfo}}</button>
         <div class="button-bar">
-            <button class="button button-stable button-block  icon-left ion-android-call" ng-click="callGTRC()">Call GTRC</button>
+            <a href="tel:+1-1800-555-5555">Call GTRC</a>
+            <button class="button button-stable button-block  icon-left ion-ios-redo" ng-click="callGTRC()">Call GTRC</button>
             <button class="button button-stable button-block  icon-left ion-ios-redo" ng-click="handleSRM()">SRM Case</button>
             <button class="button button-stable button-block  icon-left ion-ios-help"ng-click="displayFAQ()">FAQ</button>
             <button class="button button-stable button-block  icon-left ion-refresh" ng-click="refresh()">Refresh</button>

@@ -42,6 +42,9 @@
     <feature name="Toast">
         <param name="android-package" value="nl.xservices.plugins.Toast" />
     </feature>
+    <feature name="CallNumber">
+        <param name="android-package" value="mx.ferreyra.callnumber.CFCallNumber" />
+    </feature>
     <preference name="AndroidPersistentFileLocation" value="Internal" />
     <name>CSG_Tools</name>
     <description>

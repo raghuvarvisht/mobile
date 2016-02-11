@@ -61,6 +61,7 @@
 		BED369E6725F44128D9F987B /* Toast+UIView.m in Sources */ = {isa = PBXBuildFile; fileRef = D12959014BAE4B02BA7E2074 /* Toast+UIView.m */; };
 		3179B952318F4FCDB8F28853 /* Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = A459286A9D1A487F9E1EE3A5 /* Toast.m */; };
 		B0F2794860864678AB266347 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8385D6F94FD64E0780243096 /* QuartzCore.framework */; };
+		5F21DE28CE30473D9D55451D /* CFCallNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = CBB856396BB84EE89BC8C2C4 /* CFCallNumber.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,8 @@
 		3AED40F5CA4044AFACF684DE /* Toast+UIView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Toast+UIView.h"; path = "cordova-plugin-x-toast/Toast+UIView.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		BAE38E930B164BF19E02B713 /* Toast.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Toast.h"; path = "cordova-plugin-x-toast/Toast.h"; sourceTree = "<group>"; fileEncoding = 4; };
 		8385D6F94FD64E0780243096 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "QuartzCore.framework"; path = "System/Library/Frameworks/QuartzCore.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
+		CBB856396BB84EE89BC8C2C4 /* CFCallNumber.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CFCallNumber.m"; path = "mx.ferreyra.callnumber/CFCallNumber.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		6FDD9ABA11D949F190CBB455 /* CFCallNumber.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CFCallNumber.h"; path = "mx.ferreyra.callnumber/CFCallNumber.h"; sourceTree = "<group>"; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +311,8 @@
 				A459286A9D1A487F9E1EE3A5 /* Toast.m */,
 				3AED40F5CA4044AFACF684DE /* Toast+UIView.h */,
 				BAE38E930B164BF19E02B713 /* Toast.h */,
+				CBB856396BB84EE89BC8C2C4 /* CFCallNumber.m */,
+				6FDD9ABA11D949F190CBB455 /* CFCallNumber.h */,
 			);
 			name = Plugins;
 			path = "CSG_Tools/Plugins";
@@ -512,6 +517,7 @@
 				71CD5694C9BB45848B231582 /* PushPlugin.m in Sources */,
 				BED369E6725F44128D9F987B /* Toast+UIView.m in Sources */,
 				3179B952318F4FCDB8F28853 /* Toast.m in Sources */,
+				5F21DE28CE30473D9D55451D /* CFCallNumber.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

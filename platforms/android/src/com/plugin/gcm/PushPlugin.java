@@ -314,10 +314,6 @@ public class PushPlugin extends CordovaPlugin
             {
                 sendTask = null;
                 //Toast.makeText(getApplicationContext(), result,Toast.LENGTH_LONG).show();
-               /* if (action.equalsIgnoreCase("TOOLCONFIG"))
-                {
-                    subscribeToTopic(regId);
-                }*/
             }
         };
         sendTask.execute(null, null, null);
