@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="C:\Users\chkapoor\Documents\CISCO_CSG_Tools_Mobile\mobileapp\platforms\android\CordovaLib\assets"/></dataSet><dataSet config="release"><source path="C:\Users\chkapoor\Documents\CISCO_CSG_Tools_Mobile\mobileapp\platforms\android\CordovaLib\src\release\assets"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="C:\Users\rvisht\AndroidStudioProjects\csg_mobile\mobileapp\platforms\android\CordovaLib\assets"/></dataSet><dataSet config="release"><source path="C:\Users\rvisht\AndroidStudioProjects\csg_mobile\mobileapp\platforms\android\CordovaLib\src\release\assets"/></dataSet></merger>

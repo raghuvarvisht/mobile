@@ -70,12 +70,14 @@ public class GcmBroadcastReceiver extends WakefulBroadcastReceiver
         String serverMsg = recvdIntent.getStringExtra("message");
         JSONObject serverObj = null;
         Uri defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+
         NotificationCompat.Builder notificationBuilder = null;
         try
         {
             if (serverMsg != null)
             {
                 serverObj = new JSONObject(serverMsg);
+                System.out.println("Server Response = " + serverObj.toString());
                 String redirectClientScreenURL = "toolInfo";
                 Intent serverIntent = new Intent(context, com.cisco.dft.seed.SplashScreen.class);
 

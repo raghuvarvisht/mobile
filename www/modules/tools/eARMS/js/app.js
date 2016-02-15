@@ -7,7 +7,7 @@
 var db = null;
 var userId;
 
-angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ngCordova'])
+angular.module('app', ['ionic', 'app.controllers', 'app.routes', 'app.services', 'app.directives', 'ngCordova','ngSanitize'])
 .run(function($ionicPlatform, $cordovaSQLite, $cordovaPush, $q, $http, $cordovaOauth) 
 {
   $ionicPlatform.ready(function() 

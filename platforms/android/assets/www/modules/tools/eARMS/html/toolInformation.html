@@ -6,7 +6,8 @@
             </label>
             <ion-list></ion-list>
             <label class="item item-input" name="txtCurrentMsg">
-                <span class="input-label">{{serverMessage}}</span><textarea placeholder="Current Message"> </textarea>
+               <!-- <span class="input-label">{{serverMessage}}</span><textarea placeholder="Current Message"> </textarea>-->
+                <p ng-bind-html="serverMessage"></p>
             </label>
         </form>
         <button class="button button-positive button-block" ng-click="handleServerAction()">{{buttonInfo}}</button>

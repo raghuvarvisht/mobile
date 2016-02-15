@@ -13,8 +13,9 @@
             <div class="title">Menu</div>
         </ion-header-bar>
         <ion-content padding="false" class="side-menu-left has-header" <="" ion-content="">
-            <ion-list ng-controller="SideMenuCtrl">                
-                <ion-item ng-click="pingServer()" href="#">Ping Server</ion-item>
+            <ion-list ng-controller="SideMenuCtrl" >                
+                <ion-item menu-close ng-click="pingServer()" href="#">Ping Server</ion-item>                
+                <ion-toggle menu-close ng-model="showFavoritesFlag.checked"  ng-change="showFavorite($event)">Show Favorites Tools</ion-toggle>                 
             </ion-list>
         </ion-content>
     </ion-side-menu>

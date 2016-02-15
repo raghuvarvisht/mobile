@@ -18,11 +18,12 @@ angular.module('app.controllers', [])
 {
     $rootScope.createTopic = function createTopic(arguments)
     {
-       return arguments.join('%%');     
+       return  encodeURI(arguments.join('%%'));  
     }
 })
 .controller('toolListCtrl', function($scope, $cordovaSQLite, $location, $ionicPlatform, DBFactory, $cordovaOauth) 
 {   
+    //$scope.isFavorite= false;
     $ionicPlatform.ready(function() 
 	{
 		  
@@ -31,8 +32,23 @@ angular.module('app.controllers', [])
 	function call_back_db(configuration) 
 	{
 	   $scope.listItems = configuration;
+       //code for testing added by raghuvar
+       for(var i=0 ;i<$scope.listItems.length; i++ ){
+           $scope.listItems[i].is_favorite =false;           
+       }
+       //code for testing
+       
 	   console.log("Configuration value for call_back_db" + configuration);
-	}		
+	}	
+    
+    $scope.callFavorite=function($event,flag,$index,toolname)
+    {
+        $event.preventDefault();
+        $scope.listItems[$index].is_favorite = (flag == true) ? false: true;
+        
+       // alert(flag+"=="+$index+"=="+toolname);
+    }
+    	
 	DBFactory.getToolResults(call_back_db);
 })
 
@@ -319,6 +335,7 @@ angular.module('app.controllers', [])
    
 .controller('SideMenuCtrl', function($scope, $ionicModal, $location, DBFactory, $cordovaSQLite, $ionicSideMenuDelegate) 
 {
+     $scope.showFavoritesFlag = {checked:true};
      $scope.pingServer = function() 
 	 {
 		 console.log("Ping Server action called");
@@ -339,14 +356,23 @@ angular.module('app.controllers', [])
 		 userConfig["ecb"] = "topicSubscribe.onSubscribeNotificationGCM";
          userConfigJson = userConfig;
 		 topicSubscribe.initialize();
-	 } 
+	 }
+    
+     $scope.showFavorite=function($event){
+         //alert('coming in toogle');
+         //$event.preventDefault();
+         console.log('show favorites='+$scope.showFavoritesFlag.checked);
+     } 
 })
 
-.controller('toolInformationCtrl', function($scope, $stateParams, $window, DBFactory, $rootScope) 
+.controller('toolInformationCtrl', function($scope, $stateParams, $window, DBFactory, $cordovaPreferences) 
 {
-	console.log("stateparams =="+$stateParams.toolId+"=="+$stateParams.info+"=="+$stateParams.action+"=="+$stateParams.topic+"=="+$stateParams.redirectServerURL+"=="+$stateParams.notificationMsg);
+	 
+    console.log("stateparams =="+$stateParams.toolId+"=="+$stateParams.info+"=="+$stateParams.action+"=="+$stateParams.topic+"=="+$stateParams.redirectServerURL+"=="+$stateParams.notificationMsg);
+
+    
     $scope.toolName = $stateParams.toolId;
-    $scope.serverMessage = $stateParams.notificationMsg;
+    $scope.serverMessage ="<table><thead><tr><th>Status</th><th>Total</th><th>P</th><th>Q</th><th>E</th><th>C</th><th>S</th><th>R</th></tr></thead><tbody><tr><td>C</td><td>1</td><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td></tr></tbody></table>";// $stateParams.info;
     $scope.buttonInfo = $stateParams.action;
     
     $scope.handleServerAction  = function () 
